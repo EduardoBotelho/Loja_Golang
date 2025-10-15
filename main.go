@@ -1,21 +1,13 @@
 package main
 
 import (
-	"html/template"
 	"net/http"
-)
 
-var temp = template.Must(template.ParseGlob("templates/*.html"))
+	"github.com/EduardoBotelho/routes"
+)
 
 func main() {
 
-	http.HandleFunc("/", index)
-
+	routes.CarregaRotas()
 	http.ListenAndServe(":8000", nil)
-}
-
-func index(w http.ResponseWriter, r *http.Request) {
-	todoOsProdutos := BuscaTodos()
-	temp.ExecuteTemplate(w, "index", todoOsProdutos)
-
 }

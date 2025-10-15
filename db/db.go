@@ -3,7 +3,7 @@ package db
 import(
 
 	"database/sql"
-	_ "github.com/go-sql-driver/mysql" // Importa o driver do MySQL
+	_ "github.com/go-sql-driver/mysql"
 )
 
 func ConectaDb() *sql.DB {
